@@ -57,6 +57,7 @@ function resolve(A,b,D_0,x_0,x_t,V,v,n,c,c_to_matrix)
         println("\n")
         t+=1
     end
+    return x_t
 end
 
 
@@ -72,5 +73,6 @@ c = [3.0, 2.0]
 n = 2.0 #numero de variables
 x_t = x_0
 
-print("Loading ...\n")
-resolve(A,b,D_0,x_0,x_t,V,v,n,c,c_to_matrix)
+println("Loading ...\n")
+x_t = resolve(A,b,D_0,x_0,x_t,V,v,n,c,c_to_matrix)
+println("Valor objetivo : ", dot(x_t,c))
